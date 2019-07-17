@@ -106,3 +106,6 @@ venv.bak/
 # Program temp and output dir
 /tmp
 /output
+
+# Test resources
+/video.mp4
