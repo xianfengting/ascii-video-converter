@@ -36,7 +36,7 @@ $ python3 run.py <input_file> -o/--output <output_file>
 参数说明:
 
 - input_file - 要转换成字符画视频的文件路径\(含文件名\)\.
-- output_file - 输出文件名称\(含文件名\)\.
+- output_file - 输出文件路径\(含文件名\)\.
 
 # 许可证
 
