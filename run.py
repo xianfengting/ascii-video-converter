@@ -12,4 +12,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     input_file = args.file
     output_file = args.output
+    # 调用 main 函数
     main(input_file, output_file)
