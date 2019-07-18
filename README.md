@@ -14,7 +14,7 @@ $ git clone https://github.com/xianfengting/ascii-video-converter.git
 
 2. 确保电脑上已安装 ```ffmpeg``` \.若未安装,以下两种安装方法任选其一:
 
-    - 执行命令:
+    - 执行命令\(仅限于 Debian 操作系统\):
     ```
     $ sudo apt-get install ffmpeg
     ```
