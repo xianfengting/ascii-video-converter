@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: run.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "./video.mp4",
+                "--output",
+                "./output/video-ascii.mp4"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
             "name": "Python: 模块",
             "type": "python",
             "request": "launch",
