@@ -7,6 +7,7 @@ from src import ascii_tools
 import progressbar as pbar
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
+import shutil
 
 # 命令行输入参数处理
 parser = argparse.ArgumentParser()
@@ -98,7 +99,7 @@ def check_for_dirs(dir):
         os.makedirs(dir)
 
 def delete_temp_dirs():
-    os.rmdir("./tmp")
+    shutil.rmtree("./tmp")
 
 if __name__ == "__main__":
     convert_video_to_pictures(FILE, RAW_PICTURES_DIR)
