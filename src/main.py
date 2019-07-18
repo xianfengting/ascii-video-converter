@@ -2,21 +2,11 @@
 
 import os
 from PIL import Image, ImageFont, ImageDraw
-import argparse
 from src import ascii_tools
 import progressbar as pbar
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 import shutil
-
-# 命令行输入参数处理
-parser = argparse.ArgumentParser()
-parser.add_argument('file')
-parser.add_argument('-o', '--output')
-# 获取参数
-args = parser.parse_args()
-FILE = args.file
-OUTPUT = args.output
 
 RAW_PICTURES_DIR = "./tmp/pictures"
 ASCII_PICTURES_DIR = "./tmp/ascii-pictures"
@@ -101,10 +91,10 @@ def check_for_dirs(dir):
 def delete_temp_dirs():
     shutil.rmtree("./tmp")
 
-if __name__ == "__main__":
-    convert_video_to_pictures(FILE, RAW_PICTURES_DIR)
-    convert_video_to_BGM(FILE, BGM_FILE_PATH)
+def main(input_file, output_file):
+    convert_video_to_pictures(input_file, RAW_PICTURES_DIR)
+    convert_video_to_BGM(input_file, BGM_FILE_PATH)
     convert_pictures_to_ascii_pictures(RAW_PICTURES_DIR, ASCII_PICTURES_DIR)
     convert_pictures_and_BGM_to_video("{}/%05d.png".format(ASCII_PICTURES_DIR),\
-            BGM_FILE_PATH, OUTPUT)
+            BGM_FILE_PATH, output_file)
     delete_temp_dirs()
