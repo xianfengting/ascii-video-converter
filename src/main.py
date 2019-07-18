@@ -52,10 +52,10 @@ def convert_picture_to_ascii(picture_path, output_path):
 
 def convert_video_to_pictures(video, output_path):
     check_for_dirs(output_path)
-    os.system("ffmpeg -i {} -r 30 {}/%05d.png".format(video, output_path))
+    os.system("ffmpeg -i {} -r 25 {}/%05d.png".format(video, output_path))
 
 def convert_video_to_BGM(video, output_file_path):
-    os.system("ffmpeg -i {} -r 30 {}".format(video, output_file_path))
+    os.system("ffmpeg -i {} -r 25 {}".format(video, output_file_path))
 
 def convert_pictures_to_ascii_pictures(raw_pictures_path, output_path):
     check_for_dirs(output_path)
@@ -82,7 +82,7 @@ def convert_pictures_and_BGM_to_video(pictures_path_template, bgm_path, output_f
     #os.system("ffmpeg -i {} -r 30 -strict -2 {}".format(pictures_path_template, "./tmp/video-no-bgm.mp4"))
     #os.system("ffmpeg -i {} -i {} -r 30 -strict -2 {}".format("./tmp/video-no-bgm.mp4",\
     #        bgm_path, output_file_path))
-    os.system("ffmpeg -i {} -i {} -r 30 -strict -2 -vcodec mpeg4 {}".format(pictures_path_template, bgm_path, output_file_path))
+    os.system("ffmpeg -i {} -i {} -r 25 -strict -2 -vcodec mpeg4 {}".format(pictures_path_template, bgm_path, output_file_path))
 
 def check_for_dirs(dir):
     if not os.path.exists(dir):
